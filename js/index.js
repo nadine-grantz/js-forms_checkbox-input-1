@@ -15,10 +15,27 @@ function showTosError() {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // --v-- write your code here --v--
+  // const formData = new FormData(event.target);
+  // const data = Object.fromEntries(formData);
 
-  // --^-- write your code here --^--
+  // const firstName = data.firstName;
+  // event.target.element.firstName.focus; // setzt den curser nach dem submit wieder in den firstName
 
-  // eslint-disable-next-line no-alert
-  alert("Form submitted");
+  // Lösungsvorschlag 1:
+  // if (!tosCheckbox.checked) {
+  //   showTosError();
+  //   return;
+  // } else {
+  //   hideTosError();
+  // }
+
+  // Lösungsvorschlag 2:
+  if (tosCheckbox.checked) {
+    hideTosError();
+  } else {
+    showTosError();
+  }
+  alert("Formular abgeschickt"); // es erscheint ein pop up für den user
 });
+
+hideTosError(); // die Message wird immer "versteckt"
